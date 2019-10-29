@@ -127,7 +127,7 @@ form[name="to-do"] li::before {
 }
 
 form[name="to-do"] li {
-  text-indent: -1.6em;
+  text-indent: -1.3em;
 }
 
 @-moz-document url-prefix() {
