@@ -137,8 +137,14 @@ form[name="to-do"] li {
 
 
 
-form[name="to-do"] li {
+#to-do li {
   padding: 0.5em;
+}
+
+#to-do label:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+
 }
 
 input[type=checkbox] {
@@ -165,6 +171,20 @@ input[type=checkbox]:checked + label {
   flex: 1 1 100%;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+
+.row a {
+  color: white;
+  text-decoration-style: dotted;
+}
+
+.row a:hover {
+  color: #fefd11;
+}
+
+.row a:active {
+  color: #E52A6F;
 }
 
 .col-1, .col-3 {

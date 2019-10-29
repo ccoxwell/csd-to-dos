@@ -1,16 +1,9 @@
-/* If you're feeling fancy you can add interactivity 
-    to your site with Javascript */
-
-// prints "hi" in the browser's dev tools console
-console.log("hi");
-
 let mushroom = new Audio("/assets/smb_powerup.wav");
 let powerDown = new Audio("/assets/smb_pipe.wav");
 let stageClear = new Audio("/assets/smb_stage_clear.wav");
 let previousAudio = mushroom;
 
 let todoElementsList = Array.from(document.querySelectorAll("#to-do li"));
-console.log(todoElementsList);
 let todoObjList = todoElementsList.map(todo => {
   let todoEl = Array.from(todo.children);
   let checked = todoEl[0].checked;
@@ -20,9 +13,8 @@ let todoObjList = todoElementsList.map(todo => {
 
 for (let i = 0; i < todoElementsList.length; i++) {
   let el = todoElementsList[i];
-  el.addEventListener("mouseup", function(e) {
+  el.children[1].addEventListener("mouseup", function(e) {
     let checkedList = todoElementsList.filter(el => el.children[0].checked);
-    console.log(checkedList);
     isChecked = el.children[0].checked;
 
     if (checkedList.length == todoElementsList.length - 1 && !isChecked) {
@@ -30,6 +22,7 @@ for (let i = 0; i < todoElementsList.length; i++) {
       previousAudio.currentTime = 0;
       stageClear.play();
       previousAudio = stageClear;
+      confetti.start();
     } else {
       if (!isChecked) {
         previousAudio.pause();
