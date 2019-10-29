@@ -92,7 +92,7 @@ select {
 body {
   font-family: Montserrat, arial, sans-serif;
   color: #fff;
-  background-color: #67AECA;
+  background-color: #675682;
 }
 
 h1 {
@@ -182,6 +182,9 @@ input[type=checkbox]:checked + label {
 }
 
 @media (min-width: 849px) {
+  body {
+    background-color: #67AECA;
+  }
   .container { 
     align-items: center;
   }
