@@ -1,3 +1,11 @@
+/* COLORS!
+Blue Topaz: #67AECA
+Amethyst:   #675682
+Jewel:      #5F0F4E
+Rose:       #E52A6F
+Mustard:    #E9B000
+END COLORS! */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -35,6 +43,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 24px;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -82,30 +91,107 @@ select {
 
 body {
   font-family: Montserrat, arial, sans-serif;
-  margin: 2em;
+  color: #fff;
+  background-color: #67AECA;
 }
 
 h1 {
   font-family: "Staatliches", Georgia, serif;
-  color: #373fff;
+  text-decoration: underline overline #E52A6F wavy;
+  text-decoration-skip-ink: none;
+  font-size: 2.5em;
 }
+
+@counter-style emojis {
+  system: cyclic;
+  symbols: "\1F994" "\1F988" "\1F984" "\1F48E" "\1F308" "\1F991";
+  suffix: " ";
+}
+	
+/* @media screen and (-webkit-min-device-pixel-ratio:0) { 
+  form[name="to-do"] ol {
+    list-style: none;
+  }
+
+  form[name="to-do"] li::before {
+    content: "\1F984";
+  }
+} */
 
 form[name="to-do"] ol {
   list-style: none;
 }
 
+form[name="to-do"] li::before {
+  content: "\1F984";
+}
+
 form[name="to-do"] li {
-  text-indent: -1.5em;
-  padding-bottom: 0.5em;
+  text-indent: -1.6em;
+}
+
+@-moz-document url-prefix() {
+    @supports (animation: calc(0s)) {
+        /* Stylo */
+        form[name="to-do"] ol {
+          list-style-type: emojis;
+        }
+        form[name="to-do"] li::before {
+          content: none;
+        }
+        form[name="to-do"] li {
+          text-indent: 0;
+        }
+    }
+}
+
+
+
+form[name="to-do"] li {
+  padding: 0.5em;
+}
+
+input[type=checkbox] {
+  display: none;
 }
 
 input[type=checkbox]:checked + label {
   text-decoration: line-through;
+  text-decoration-color: #E52A6F;
 }
 
 .container {
-  width: 70%;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+}
+
+.row {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: row wrap;
+  background-color: #675682;
+  flex: 1 1 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.col-1, .col-3 {
+  flex: 0 0 92%;
+}
+
+@media (min-width: 849px) {
+  .container { 
+    align-items: center;
+  }
+  .col-1 {
+    flex: 0 0 50%;
+    background-color: inherit;
+    text-align: right;
+    padding-right: 1em;
+  }
+  .col-3 {
+    flex: 0 0 50%;
+  }
 }
