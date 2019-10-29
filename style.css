@@ -107,16 +107,6 @@ h1 {
   symbols: "\1F994" "\1F988" "\1F984" "\1F48E" "\1F308" "\1F991";
   suffix: " ";
 }
-	
-/* @media screen and (-webkit-min-device-pixel-ratio:0) { 
-  form[name="to-do"] ol {
-    list-style: none;
-  }
-
-  form[name="to-do"] li::before {
-    content: "\1F984";
-  }
-} */
 
 form[name="to-do"] ol {
   list-style: none;
