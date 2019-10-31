@@ -116,6 +116,10 @@ form[name="to-do"] li::before {
   content: "\1F984";
 }
 
+.halloween form[name="to-do"] li::before {
+  content: "\1F383";
+}
+
 form[name="to-do"] li {
   text-indent: -1.3em;
 }
@@ -130,6 +134,15 @@ form[name="to-do"] li {
           content: none;
         }
         form[name="to-do"] li {
+          text-indent: 0;
+        }
+        .halloween form[name="to-do"] ol {
+          list-style-type: "\1f47b";
+        }
+        .halloween form[name="to-do"] li::before {
+          content: none;
+        }
+        .halloween form[name="to-do"] li {
           text-indent: 0;
         }
     }
@@ -228,12 +241,62 @@ body.halloween.business-pumpkin {
   text-decoration: underline overline #FF9A00 wavy;
 }
 
+.halloween h1:hover {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .halloween input[type=checkbox]:checked + label {
   text-decoration: line-through;
   text-decoration-color: #FF9A00;
 }
 
-
-form[name="to-do"] li::before {
-  content: "\1F383";
+#business-toggle {
+  font-size: 100%;
+  font-family: inherit;
+  color: #fff;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  padding-left: 15px;
+  padding-top: 15px;
 }
+
+#business-toggle:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+#business-toggle:active {
+  transform: scale(1.25);
+  font-size: 500%;
+  transition-duration: 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
