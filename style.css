@@ -208,3 +208,32 @@ input[type=checkbox]:checked + label {
     flex: 0 0 50%;
   }
 }
+
+body.halloween {
+  background-color: #881EE4;
+  color: #85E21F;
+  font-family: Arvo;
+}
+
+body.halloween.business-pumpkin {
+  background: url(/assets/businesspumpkin.gif) repeat;
+}
+
+.halloween .row {
+  background-color: #000;
+}
+
+.halloween h1 {
+  font-family: Creepster, serif;
+  text-decoration: underline overline #FF9A00 wavy;
+}
+
+.halloween input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+  text-decoration-color: #FF9A00;
+}
+
+
+form[name="to-do"] li::before {
+  content: "\1F383";
+}
