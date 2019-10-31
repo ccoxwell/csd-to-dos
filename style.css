@@ -276,7 +276,7 @@ body.halloween.business-pumpkin {
 
 #business-toggle:hover {
   animation: shake 0.5s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; 
 }
 
 #business-toggle:active {
