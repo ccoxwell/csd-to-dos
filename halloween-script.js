@@ -4,6 +4,8 @@ let stageClear = new Audio("/assets/laugh.wav");
 let previousAudio = mushroom;
 let businessPumpkin = false;
 
+[mushroom, powerDown, stageClear].map(audio => audio.volume = 0.1);
+
 let businessPumpkinButton = document.getElementById("business-toggle");
 
 businessPumpkinButton.addEventListener("click", function(e) {
