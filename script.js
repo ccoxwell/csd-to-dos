@@ -4,8 +4,11 @@ let stageClear = new Audio("/assets/smb_stage_clear.wav");
 let previousAudio = mushroom;
 
 let todoElementsList = Array.from(document.querySelectorAll("#to-do li"));
+console.log(todoElementsList);
 let todoObjList = todoElementsList.map(todo => {
   let todoEl = Array.from(todo.children);
+  console.log("todoEl");
+  console.log(todoEl);
   let checked = todoEl[0].checked;
   let todoId = todoEl[0].id;
   return { todoId, checked };
